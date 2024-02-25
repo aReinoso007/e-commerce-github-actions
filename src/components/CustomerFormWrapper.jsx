@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import CustomerForm from './CustomerForm'; // Assuming CustomerForm is your class component
 

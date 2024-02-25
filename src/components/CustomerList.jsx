@@ -1,5 +1,5 @@
 // src/components/CustomerList.jsx
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { ListGroup, Button, Container, Alert } from 'react-bootstrap';
 import axios from 'axios';
@@ -32,12 +32,13 @@ class CustomerList extends Component {
 
     selectCustomer = (id) => {
         this.setState({ selectedCustomerId: id });
+        // eslint-disable-next-line react/prop-types
         this.props.onCustomerSelect(id);
     }
 
     deleteCustomer = (customerId) => {
         axios.delete(`http://127.0.0.1:5000/customers/${customerId}`)
-             .then(response => {
+             .then(() => {
                  this.fetchCustomers();
              })
              .catch(error => {

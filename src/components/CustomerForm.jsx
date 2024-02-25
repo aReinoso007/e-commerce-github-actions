@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 // src/components/CustomerForm.jsx
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Form, Button, Alert, Container, Modal } from 'react-bootstrap';
 import axios from 'axios';
 
@@ -106,7 +107,7 @@ class CustomerForm extends Component {
             const httpMethod = this.state.selectedCustomerId ? axios.put : axios.post;
 
             httpMethod(apiUrl, customerData)
-                .then(response => {
+                .then(() => {
                     this.setState({
                         showSuccessModal: true, // Show the success modal
                         isLoading: false
